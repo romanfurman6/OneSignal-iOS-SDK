@@ -424,7 +424,6 @@ OneSignalWebView *webVC;
     return notification;
 }
 
-//Shared instance as OneSignal is delegate CLLocationManagerDelegate
 static OneSignal* singleInstance = nil;
 + (OneSignal*)sharedInstance {
     @synchronized( singleInstance ) {
