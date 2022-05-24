@@ -28,7 +28,7 @@ THE SOFTWARE.
 #import "OneSignal.h"
 #import "OSUserState.h"
 #import <OneSignalCore/OneSignalCore.h>
-#import "OneSignalLocation.h"
+//#import "OneSignalLocation.h"
 #import "OSFocusCallParams.h"
 #import "OSEmailSubscription.h"
 #import "OSSubscription.h"
@@ -69,10 +69,10 @@ withSMSAuthHashToken:(NSString * _Nullable)hashToken
 
 - (void)sendBadgeCount:(NSNumber * _Nonnull)badgeCount appId:(NSString * _Nonnull)appId;
 
-- (void)sendLocation:(os_last_location * _Nonnull)lastLocation
-               appId:(NSString * _Nonnull)appId
-         networkType:(NSNumber * _Nonnull)networkType
-     backgroundState:(BOOL)background;
+//- (void)sendLocation:(os_last_location * _Nonnull)lastLocation
+//               appId:(NSString * _Nonnull)appId
+//         networkType:(NSNumber * _Nonnull)networkType
+//     backgroundState:(BOOL)background;
 
 - (void)sendOnFocusTime:(NSNumber * _Nonnull)totalTimeActive
                  params:(OSFocusCallParams * _Nonnull)params

@@ -31,7 +31,7 @@ THE SOFTWARE.
 #import "OneSignalInternal.h"
 #import "OneSignalCommonDefines.h"
 #import "OneSignalTracker.h"
-#import "OneSignalLocation.h"
+//#import "OneSignalLocation.h"
 #import "OSMessagingController.h"
 #import "UIApplication+OneSignal.h"
 
@@ -83,7 +83,7 @@ static OneSignalLifecycleObserver* _instance = nil;
     
     if ([OneSignal appId]) {
         [OneSignalTracker onFocus:NO];
-        [OneSignalLocation onFocus:YES];
+        //[OneSignalLocation onFocus:YES];
         [[OSMessagingController sharedInstance] onApplicationDidBecomeActive];
     }
 }
@@ -100,8 +100,8 @@ static OneSignalLifecycleObserver* _instance = nil;
 - (void)didEnterBackground {
     [OneSignal onesignalLog:ONE_S_LL_VERBOSE message:@"application/scene didEnterBackground"];
     
-    if ([OneSignal appId])
-        [OneSignalLocation onFocus:NO];
+//    if ([OneSignal appId])
+//        [OneSignalLocation onFocus:NO];
 }
 
 - (void)dealloc {

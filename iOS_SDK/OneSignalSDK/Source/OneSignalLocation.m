@@ -26,9 +26,9 @@
  */
 
 #import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
+//#import <CoreLocation/CoreLocation.h>
 
-#import "OneSignalLocation.h"
+//#import "OneSignalLocation.h"
 #import "OneSignalHelper.h"
 #import "OneSignal.h"
 #import <OneSignalCore/OneSignalCore.h>

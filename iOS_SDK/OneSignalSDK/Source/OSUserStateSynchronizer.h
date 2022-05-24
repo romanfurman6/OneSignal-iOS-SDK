@@ -27,9 +27,9 @@ THE SOFTWARE.
 
 #import "OneSignal.h"
 #import <OneSignalCore/OneSignalCore.h>
-#import "OneSignalLocation.h"
+//#import "OneSignalLocation.h"
 #import "OSUserState.h"
-#import "OSLocationRequests.h"
+//#import "OSLocationRequests.h"
 #import "OSFocusRequests.h"
 #import "OSSubscription.h"
 
@@ -68,10 +68,10 @@ THE SOFTWARE.
 - (OSRequestBadgeCount * _Nonnull)sendBadgeCount:(NSNumber * _Nonnull)badgeCount
                                            appId:(NSString * _Nonnull)appId;
 
-- (OSRequestSendLocation * _Nonnull)sendLocation:(os_last_location * _Nonnull)lastLocation
-                                           appId:(NSString * _Nonnull)appId
-                                     networkType:(NSNumber * _Nonnull)networkType
-                                 backgroundState:(BOOL)background;
+//- (OSRequestSendLocation * _Nonnull)sendLocation:(os_last_location * _Nonnull)lastLocation
+//                                           appId:(NSString * _Nonnull)appId
+//                                     networkType:(NSNumber * _Nonnull)networkType
+//                                 backgroundState:(BOOL)background;
 
 - (OSRequestOnFocus * _Nonnull)sendOnFocusTime:(NSNumber * _Nonnull)activeTime
                                          appId:(NSString * _Nonnull)appId

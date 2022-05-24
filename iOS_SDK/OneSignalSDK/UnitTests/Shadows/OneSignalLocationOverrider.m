@@ -26,12 +26,12 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
+//#import <CoreLocation/CoreLocation.h>
 
 #import "TestHelperFunctions.h"
 #import "OneSignalSelectorHelpers.h"
 #import "OneSignalHelperOverrider.h"
-#import "OneSignalLocation.h"
+//#import "OneSignalLocation.h"
 #import "OneSignalLocationOverrider.h"
 
 @implementation OneSignalLocationOverrider

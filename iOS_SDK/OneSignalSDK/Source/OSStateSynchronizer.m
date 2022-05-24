@@ -313,18 +313,18 @@ withSMSAuthHashToken:(NSString *)hashToken
     [OneSignalClient.sharedClient executeSimultaneousRequests:requests withSuccess:nil onFailure:nil];
 }
 
-- (void)sendLocation:(os_last_location *)lastLocation
-               appId:(NSString *)appId
-         networkType:(NSNumber *)networkType
-     backgroundState:(BOOL)background {
-    let stateSyncronizer = [self getStateSynchronizers];
-    let requests = [NSMutableDictionary new];
-    for (OSUserStateSynchronizer* userStateSynchronizer in stateSyncronizer) {
-        requests[userStateSynchronizer.getChannelId] = [userStateSynchronizer sendLocation:lastLocation appId:appId networkType:networkType backgroundState:background];
-    }
-    
-    [OneSignalClient.sharedClient executeSimultaneousRequests:requests withSuccess:nil onFailure:nil];
-}
+//- (void)sendLocation:(os_last_location *)lastLocation
+//               appId:(NSString *)appId
+//         networkType:(NSNumber *)networkType
+//     backgroundState:(BOOL)background {
+//    let stateSyncronizer = [self getStateSynchronizers];
+//    let requests = [NSMutableDictionary new];
+//    for (OSUserStateSynchronizer* userStateSynchronizer in stateSyncronizer) {
+//        requests[userStateSynchronizer.getChannelId] = [userStateSynchronizer sendLocation:lastLocation appId:appId networkType:networkType backgroundState:background];
+//    }
+//
+//    [OneSignalClient.sharedClient executeSimultaneousRequests:requests withSuccess:nil onFailure:nil];
+//}
 
 - (void)sendOnFocusTime:(NSNumber*)totalTimeActive
                  params:(OSFocusCallParams *)params

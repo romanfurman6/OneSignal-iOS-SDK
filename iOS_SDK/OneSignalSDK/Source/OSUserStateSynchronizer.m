@@ -76,12 +76,12 @@ THE SOFTWARE.
     return [OSRequestBadgeCount withUserId:[self getId] appId:appId badgeCount:badgeCount emailAuthToken:[self getEmailAuthHashToken] externalIdAuthToken:[self getExternalIdAuthHashToken]];
 }
 
-- (OSRequestSendLocation *)sendLocation:(os_last_location *)lastLocation
-                                  appId:(NSString *)appId
-                            networkType:(NSNumber *)networkType
-                        backgroundState:(BOOL)background{
-    return [OSRequestSendLocation withUserId:[self getId] appId:appId location:lastLocation networkType:networkType backgroundState:background emailAuthHashToken:[self getEmailAuthHashToken] externalIdAuthToken:[self getExternalIdAuthHashToken]];
-}
+//- (OSRequestSendLocation *)sendLocation:(os_last_location *)lastLocation
+//                                  appId:(NSString *)appId
+//                            networkType:(NSNumber *)networkType
+//                        backgroundState:(BOOL)background{
+//    return [OSRequestSendLocation withUserId:[self getId] appId:appId location:lastLocation networkType:networkType backgroundState:background emailAuthHashToken:[self getEmailAuthHashToken] externalIdAuthToken:[self getExternalIdAuthHashToken]];
+//}
 
 - (OSRequestOnFocus *)sendOnFocusTime:(NSNumber *)activeTime
                                 appId:(NSString *)appId

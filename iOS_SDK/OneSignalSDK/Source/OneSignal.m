@@ -29,7 +29,7 @@
 #import "OneSignalInternal.h"
 #import "OneSignalTracker.h"
 #import "OneSignalTrackIAP.h"
-#import "OneSignalLocation.h"
+//#import "OneSignalLocation.h"
 #import "OneSignalReachability.h"
 #import "OneSignalJailbreakDetection.h"
 #import "OneSignalMobileProvision.h"
@@ -725,8 +725,8 @@ static OneSignalOutcomeEventsController *_outcomeEventsController;
     _outcomeEventFactory = [[OSOutcomeEventsFactory alloc] initWithCache:[OSOutcomeEventsCache sharedOutcomeEventsCache]];
     _outcomeEventsController = [[OneSignalOutcomeEventsController alloc] initWithSessionManager:[OSSessionManager sharedSessionManager] outcomeEventsFactory:_outcomeEventFactory];
 
-    if (appId && [self isLocationShared])
-       [OneSignalLocation getLocation:false fallbackToSettings:false withCompletionHandler:nil];
+//    if (appId && [self isLocationShared])
+//       [OneSignalLocation getLocation:false fallbackToSettings:false withCompletionHandler:nil];
 
     /*
      * No need to call the handleNotificationOpened:userInfo as it will be called from one of the following selectors
@@ -1478,7 +1478,7 @@ static OneSignalOutcomeEventsController *_outcomeEventsController;
 
     if (!enable) {
         [OneSignal onesignalLog:ONE_S_LL_VERBOSE message:@"startLocationSharedWithFlag set false, clearing last location!"];
-        [OneSignalLocation clearLastLocation];
+        //[OneSignalLocation clearLastLocation];
     }
 }
 
@@ -1491,7 +1491,7 @@ static OneSignalOutcomeEventsController *_outcomeEventsController;
     if ([OSPrivacyConsentController shouldLogMissingPrivacyConsentErrorWithMethodName:@"promptLocation"])
         return;
     
-    [OneSignalLocation getLocation:true fallbackToSettings:fallback withCompletionHandler:completionHandler];
+//    [OneSignalLocation getLocation:true fallbackToSettings:fallback withCompletionHandler:completionHandler];
 }
 
 + (BOOL)isLocationShared {
@@ -1736,16 +1736,16 @@ static BOOL _trackedColdRestart = false;
     if (self.playerTags.tagsToSend)
         userState.tags = self.playerTags.tagsToSend;
     
-    if ([self isLocationShared] && [OneSignalLocation lastLocation]) {
-        [OneSignal onesignalLog:ONE_S_LL_VERBOSE message:@"Attaching device location to 'on_session' request payload"];
-        let locationState = [OSLocationState new];
-        locationState.latitude = [NSNumber numberWithDouble:[OneSignalLocation lastLocation]->cords.latitude];
-        locationState.longitude = [NSNumber numberWithDouble:[OneSignalLocation lastLocation]->cords.longitude];
-        locationState.verticalAccuracy = [NSNumber numberWithDouble:[OneSignalLocation lastLocation]->verticalAccuracy];
-        locationState.accuracy = [NSNumber numberWithDouble:[OneSignalLocation lastLocation]->horizontalAccuracy];
-        userState.locationState = locationState;
-    } else
-        [OneSignal onesignalLog:ONE_S_LL_VERBOSE message:@"Not sending location with 'on_session' request payload, setLocationShared is false or lastLocation is null"];
+//    if ([self isLocationShared] && [OneSignalLocation lastLocation]) {
+//        [OneSignal onesignalLog:ONE_S_LL_VERBOSE message:@"Attaching device location to 'on_session' request payload"];
+//        let locationState = [OSLocationState new];
+//        locationState.latitude = [NSNumber numberWithDouble:[OneSignalLocation lastLocation]->cords.latitude];
+//        locationState.longitude = [NSNumber numberWithDouble:[OneSignalLocation lastLocation]->cords.longitude];
+//        locationState.verticalAccuracy = [NSNumber numberWithDouble:[OneSignalLocation lastLocation]->verticalAccuracy];
+//        locationState.accuracy = [NSNumber numberWithDouble:[OneSignalLocation lastLocation]->horizontalAccuracy];
+//        userState.locationState = locationState;
+//    } else
+//        [OneSignal onesignalLog:ONE_S_LL_VERBOSE message:@"Not sending location with 'on_session' request payload, setLocationShared is false or lastLocation is null"];
     
     return userState;
 }
@@ -1783,7 +1783,7 @@ static BOOL _trackedColdRestart = false;
     }
 
     // Clear last location after attaching data to user state or not
-    [OneSignalLocation clearLastLocation];
+//    [OneSignalLocation clearLastLocation];
     sessionLaunchTime = [NSDate date];
     
     [OneSignal onesignalLog:ONE_S_LL_VERBOSE message:@"Calling OneSignal create/on_session"];
@@ -1832,7 +1832,7 @@ static BOOL _trackedColdRestart = false;
             }
                 
             // Try to send location
-            [OneSignalLocation sendLocation];
+//            [OneSignalLocation sendLocation];
             
             if (emailToSet) {
                 [OneSignal setEmail:emailToSet];
